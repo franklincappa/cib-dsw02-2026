@@ -1,0 +1,4 @@
+id	dni	nombres	apellidos	direccion
+1	71234567	Ana	Pérez	Av. Lima 123
+2	74567890	Luis	García	Jr. Sol 456
+3	70111222	Carla	Ramos	Calle Norte 789

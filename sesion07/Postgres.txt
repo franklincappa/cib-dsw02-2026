@@ -1,0 +1,27 @@
+--Generar BD: db_empresa
+
+CREATE TABLE empleados (
+    id BIGSERIAL PRIMARY KEY,
+    dni VARCHAR(8) NOT NULL UNIQUE,
+    nombres VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    direccion VARCHAR(200),
+    email VARCHAR(150),
+    celular VARCHAR(15),
+    area VARCHAR(80) NOT NULL,
+    fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE INDEX idx_empleados_dni ON empleados (dni);
+CREATE INDEX idx_empleados_area ON empleados (area);
+
+
+
+INSERT INTO empleados (dni, nombres, apellidos, direccion, email, celular, area)
+VALUES
+('12345678', 'Ana', 'Pérez Salas', 'Av. Los Olivos 123', 'ana.perez@empresa.com', '987654321', 'TI'),
+('87654321', 'Luis', 'Gómez Rojas', 'Jr. Lima 456', 'luis.gomez@empresa.com', '912345678', 'Proyectos'),
+('44556677', 'María', 'Quispe Huamán', 'Calle Sol 789', 'maria.quispe@empresa.com', '900111222', 'RRHH'),
+('99887766', 'Carlos', 'Torres Medina', 'Av. Arequipa 1010', 'carlos.torres@empresa.com', '955666777', 'Finanzas');
+

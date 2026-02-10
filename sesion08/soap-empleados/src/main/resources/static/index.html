@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Servicio SOAP Empleados (Demo)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+<div class="max-w-6xl mx-auto p-6">
+    <header class="mb-6">
+        <h1 class="text-2xl font-bold">SOAP Empleados — Demo Frontend</h1>
+        <p class="text-sm text-slate-600">
+            Lista empleados y registra uno nuevo consumiendo servicio SOAP (CXF).
+        </p>
+    </header>
+
+    <!-- Alert -->
+    <div id="alert" class="hidden mb-4 rounded-lg border p-3 text-sm"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Form -->
+        <section class="lg:col-span-1 bg-white rounded-xl shadow-sm border p-5">
+            <h2 class="font-semibold text-lg mb-4">Registrar empleado</h2>
+
+            <form id="formEmpleado" class="space-y-3">
+                <div>
+                    <label class="text-xs font-medium text-slate-600">DNI</label>
+                    <input id="dni" maxlength="8" required
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="12345678"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Nombres</label>
+                    <input id="nombres" required
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="Diego"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Apellidos</label>
+                    <input id="apellidos" required
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="Ramos"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Dirección</label>
+                    <input id="direccion"
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="Av Los Ángeles 123"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Email</label>
+                    <input id="email" type="email"
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="correo@empresa.com"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Celular</label>
+                    <input id="celular"
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="987654321"/>
+                </div>
+
+                <div>
+                    <label class="text-xs font-medium text-slate-600">Área</label>
+                    <input id="area" required
+                           class="mt-1 w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring"
+                           placeholder="TI"/>
+                </div>
+
+                <button id="btnRegistrar" type="submit"
+                        class="w-full rounded-lg bg-slate-900 text-white py-2 hover:bg-slate-800 transition">
+                    Registrar
+                </button>
+            </form>
+
+            <p class="mt-4 text-xs text-slate-500">
+                Nota: Este demo envía XML SOAP vía <code>fetch</code>.
+            </p>
+        </section>
+
+        <!-- List -->
+        <section class="lg:col-span-2 bg-white rounded-xl shadow-sm border p-5">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-lg">Listado de empleados</h2>
+                <div class="flex gap-2">
+                    <button id="btnRefrescar"
+                            class="rounded-lg border px-3 py-2 text-sm hover:bg-slate-50 transition">
+                        Refrescar
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-auto border rounded-lg">
+                <table class="min-w-full text-sm">
+                    <thead class="bg-slate-100 text-slate-700">
+                    <tr>
+                        <th class="text-left px-3 py-2">ID</th>
+                        <th class="text-left px-3 py-2">DNI</th>
+                        <th class="text-left px-3 py-2">Nombres</th>
+                        <th class="text-left px-3 py-2">Apellidos</th>
+                        <th class="text-left px-3 py-2">Área</th>
+                        <th class="text-left px-3 py-2">Email</th>
+                        <th class="text-left px-3 py-2">Celular</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyEmpleados" class="divide-y"></tbody>
+                </table>
+            </div>
+
+            <div id="loading" class="hidden mt-3 text-sm text-slate-600">
+                Cargando...
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

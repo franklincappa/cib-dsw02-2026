@@ -1,0 +1,54 @@
+INSERT INTO categoria (nombre, descripcion) VALUES
+('Electrónica', 'Dispositivos electrónicos y tecnológicos'),
+('Computación', 'Equipos y accesorios de cómputo'),
+('Hogar', 'Artículos para el hogar y cocina'),
+('Deportes', 'Equipamiento y accesorios deportivos'),
+('Oficina', 'Productos y suministros de oficina'),
+('Salud', 'Productos de cuidado personal y salud'),
+('Libros', 'Libros físicos y material educativo'),
+('Audio y Video', 'Equipos de sonido y entretenimiento');
+
+
+INSERT INTO producto
+(nombre, descripcion, precio, stock, activo, categoria_id)
+VALUES
+
+-- Electrónica (1)
+('Smartphone Galaxy X', 'Smartphone 128GB, 8GB RAM', 1899.90, 25, true, 1),
+('Smart TV 55 pulgadas', 'Televisor LED 4K UHD', 2499.00, 10, true, 1),
+('Tablet Pro 10"', 'Tablet 256GB con lápiz digital', 1599.50, 15, true, 1),
+
+-- Computación (2)
+('Laptop Lenovo i7', 'Laptop 16GB RAM, 512GB SSD', 3899.00, 12, true, 2),
+('Mouse inalámbrico', 'Mouse ergonómico 2.4GHz', 79.90, 100, true, 2),
+('Teclado mecánico RGB', 'Switch Blue retroiluminado', 249.90, 40, true, 2),
+('Monitor 27"', 'Monitor IPS Full HD', 899.00, 18, true, 2),
+
+-- Hogar (3)
+('Licuadora 2L', 'Licuadora de alta potencia 800W', 199.00, 30, true, 3),
+('Microondas 20L', 'Microondas digital con grill', 399.00, 20, true, 3),
+('Juego de ollas acero', 'Set de 5 piezas inoxidable', 299.90, 15, true, 3),
+
+-- Deportes (4)
+('Bicicleta montaña', 'Bicicleta aro 29 aluminio', 1299.00, 8, true, 4),
+('Pelota fútbol profesional', 'Balón oficial tamaño 5', 129.90, 50, true, 4),
+('Mancuernas 10kg', 'Par de mancuernas recubiertas', 159.90, 25, true, 4),
+
+-- Oficina (5)
+('Impresora multifuncional', 'Imprime, escanea y copia', 599.00, 14, true, 5),
+('Silla ergonómica', 'Silla ejecutiva ajustable', 699.90, 9, true, 5),
+('Escritorio de oficina', 'Escritorio madera 120cm', 799.00, 6, true, 5),
+
+-- Salud (6)
+('Termómetro digital', 'Termómetro infrarrojo', 89.90, 70, true, 6),
+('Tensiómetro automático', 'Medidor de presión digital', 149.90, 35, true, 6),
+
+-- Libros (7)
+('Java Profesional', 'Guía completa de Java 17', 149.90, 60, true, 7),
+('Spring Boot Avanzado', 'Desarrollo de APIs modernas', 169.90, 40, true, 7),
+('PostgreSQL para Expertos', 'Optimización y tuning avanzado', 189.90, 30, true, 7),
+
+-- Audio y Video (8)
+('Audífonos Bluetooth', 'Cancelación de ruido activa', 299.90, 45, true, 8),
+('Barra de sonido 300W', 'Sistema surround compacto', 899.90, 12, true, 8),
+('Cámara deportiva 4K', 'Resistente al agua 30m', 599.00, 20, true, 8);

@@ -1,0 +1,8 @@
+### `.dockerignore` — evita copiar archivos innecesarios
+```
+target/
+.git/
+.gitignore
+*.md
+.idea/
+*.iml
